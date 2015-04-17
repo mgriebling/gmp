@@ -10,6 +10,8 @@
 		2F34A3B31AE12FD800D12A5A /* gmp.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F34A3B21AE12FD800D12A5A /* gmp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F34A3B91AE12FD800D12A5A /* gmp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F34A3AD1AE12FD800D12A5A /* gmp.framework */; };
 		2F34A3C01AE12FD800D12A5A /* gmpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F34A3BF1AE12FD800D12A5A /* gmpTests.swift */; };
+		2F34A3CB1AE12FEF00D12A5A /* mini-gmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 2F34A3C91AE12FEF00D12A5A /* mini-gmp.c */; };
+		2F34A3CC1AE12FEF00D12A5A /* mini-gmp.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F34A3CA1AE12FEF00D12A5A /* mini-gmp.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,9 @@
 		2F34A3B81AE12FD800D12A5A /* gmpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gmpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F34A3BE1AE12FD800D12A5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F34A3BF1AE12FD800D12A5A /* gmpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gmpTests.swift; sourceTree = "<group>"; };
+		2F34A3C91AE12FEF00D12A5A /* mini-gmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mini-gmp.c"; sourceTree = "<group>"; };
+		2F34A3CA1AE12FEF00D12A5A /* mini-gmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mini-gmp.h"; sourceTree = "<group>"; };
+		2F34A3CF1AE130C000D12A5A /* gmpTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gmpTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				2F34A3B21AE12FD800D12A5A /* gmp.h */,
+				2F34A3C91AE12FEF00D12A5A /* mini-gmp.c */,
+				2F34A3CA1AE12FEF00D12A5A /* mini-gmp.h */,
 				2F34A3B01AE12FD800D12A5A /* Supporting Files */,
 			);
 			path = gmp;
@@ -90,6 +97,7 @@
 			children = (
 				2F34A3BF1AE12FD800D12A5A /* gmpTests.swift */,
 				2F34A3BD1AE12FD800D12A5A /* Supporting Files */,
+				2F34A3CF1AE130C000D12A5A /* gmpTests-Bridging-Header.h */,
 			);
 			path = gmpTests;
 			sourceTree = "<group>";
@@ -109,6 +117,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F34A3CC1AE12FEF00D12A5A /* mini-gmp.h in Headers */,
 				2F34A3B31AE12FD800D12A5A /* gmp.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F34A3CB1AE12FEF00D12A5A /* mini-gmp.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +363,7 @@
 		2F34A3C71AE12FD800D12A5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -364,12 +375,15 @@
 				INFOPLIST_FILE = gmpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "gmpTests/gmpTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		2F34A3C81AE12FD800D12A5A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -377,6 +391,7 @@
 				INFOPLIST_FILE = gmpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "gmpTests/gmpTests-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -399,6 +414,7 @@
 				2F34A3C51AE12FD800D12A5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F34A3C61AE12FD800D12A5A /* Build configuration list for PBXNativeTarget "gmpTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +423,7 @@
 				2F34A3C81AE12FD800D12A5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

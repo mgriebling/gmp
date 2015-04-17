@@ -23,6 +23,9 @@ class gmpTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
+		var x = mpz_t()
+		mpz_init_set_str(&x, "123456789", 10)
+		
         XCTAssert(true, "Pass")
     }
     

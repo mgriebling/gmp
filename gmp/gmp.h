@@ -15,5 +15,5 @@ FOUNDATION_EXPORT double gmpVersionNumber;
 FOUNDATION_EXPORT const unsigned char gmpVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <gmp/PublicHeader.h>
-
+#import mini-gmp.h
 
